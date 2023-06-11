@@ -1,1 +1,1 @@
-# adidas-redesign
+This is adidas redesign source code
