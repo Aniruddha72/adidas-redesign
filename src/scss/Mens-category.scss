@@ -1,0 +1,664 @@
+@use 'utility/colors';
+@use 'utility/fonts';
+@use 'utility/default';
+@use 'utility/components';
+
+.main-header{
+    display: flex;
+    background-color: colors.$bg-dark;
+    padding-block: 22px;
+    width: 100%;
+    justify-content: space-between;
+    input{
+        display: none;
+    }
+    .Logo-image{
+        margin-inline-start: 22px;
+        width: 25%;
+        img{
+            max-width: 100%;
+        }
+    }
+}
+
+.main-header{
+    .navbar{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        .main-nav{
+            display: flex;
+            list-style: none;
+            width: 100%;
+            justify-content: center;
+            gap: 25px;
+            li{
+                a{
+                    color: colors.$text-light;
+                    font-size: fonts.$font-big;
+
+                }
+            }
+        }
+    }
+    .nav-icons{
+        margin-inline-end: 22px;
+        width: 25%;
+        display: flex;
+        justify-content: end;
+        gap: 25px;
+        img{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.main-content{
+    .categories{
+    h1{
+        text-transform: uppercase;
+        font-size: fonts.$font-veryhuge;
+        padding-block: 40px;
+        padding-inline-start: 60px;
+        font-family: fonts.$font-roboto;
+        font-weight: fonts.$font-medium;
+    }
+    .category-grid{
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        grid-template-rows: repeat(2, min-content);
+        place-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 40px;
+    }
+}
+}
+
+.main-content{
+    .categories{
+        .grid-item{
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                padding-block: 13px;
+                padding-inline-start: 25px;
+                background-color: #0004;
+                bottom: 0;
+                left: 0;
+                text-transform: uppercase;
+                color: #fff;
+                font-weight: fonts.$font-bold;
+                font-family: fonts.$font-roboto;
+            }
+            &:nth-child(1){
+                &::before{
+                    content: 'tshirts';
+                }
+            }
+            &:nth-child(2){
+                &::before{
+                    content: 'shorts';
+                }
+            }
+            &:nth-child(3){
+                &::before{
+                    content: 'hoodies & sweatshirts';
+                }
+            }
+            &:nth-child(4){
+                &::before{
+                    content: 'track pants & joggers';
+                }
+            }
+            &:nth-child(5){
+                &::before{
+                    content: 'jackets';
+                }
+            }
+            &:nth-child(6){
+                &::before{
+                    content: 'accessories';
+                }
+            }
+        }
+    }
+}
+
+.main-content{
+    .new-arrivals{
+        @include components.row-label;
+        padding-block-start: 66px;
+    }
+}
+
+.main-content{
+    .new-arrivals{
+        .arrow-left{
+            rotate: 180deg;
+        }
+    }
+}
+
+.main-content{
+    .new-arrivals{
+        .card-row{
+            @include components.card-row;
+            .card{
+                @include components.product-card;
+                .product-details{
+                    .product-link{
+                        color: #fff;
+                        text-transform: uppercase;
+                        h3{
+                            font-weight: fonts.$font-regular;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.main-content{
+        .new-arrivals{
+            .card-row{
+                .card:nth-child(2){
+                    .product-details{
+                        gap: 22px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-content{
+            .best-selling{
+                @include components.row-label;
+                padding-block-start: 66px;
+            }
+        }
+
+        .main-content{
+            .best-selling{
+                .arrow-left{
+                    rotate: 180deg;
+                }
+            }
+        }
+        
+        
+        .main-content{
+            .best-selling{
+                .card-row{
+                    @include components.card-row;
+                    .card{
+                        @include components.product-card-discount;
+                        .product-details{
+                            .product-link{
+                        color: #fff;
+                        text-transform: uppercase;
+                        h3{
+                            font-weight: fonts.$font-regular;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.main-content{
+    .best-selling{
+        .card-row{
+            .card:nth-child(2){
+                    .product-details{
+                        gap: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content{
+        .top-picks{
+            @include components.row-label;
+        }
+    }
+
+    .main-content{
+        .card-row{
+            .arrow-left{
+                rotate: 180deg;
+            }
+        }
+    }
+
+    .main-content{
+        .top-picks{
+            .card-row{
+                @include components.card-row;
+                .card{
+                    @include components.product-card;
+                    .product-details{
+                        .product-link{
+                            color: #fff;
+                            text-transform: uppercase;
+                            h3{
+                                font-weight: fonts.$font-regular;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content{
+        .top-picks{
+            .card-row{
+                .card:nth-child(2){
+                    .product-details{
+                        gap: 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content{
+        .originals{
+            @include components.row-label;
+        }
+    }
+
+    .main-content{
+        .originals{
+            .card-row{
+                @include components.card-row;
+            }
+        }
+    }
+
+    .main-content{
+        .originals{
+            .card-row{
+                .card{
+                    .product-details{
+                        .product-link{
+                            color: #fff;
+                            text-transform: uppercase;
+                            h3{
+                                font-weight: fonts.$font-regular;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content{
+        .originals{
+        .card-row{
+            .card:nth-child(2), 
+            .card:nth-child(3),
+            .card:nth-child(4){
+                @include components.product-card-discount;
+            }
+            .card:nth-child(5){
+                @include components.product-card;
+            }
+        }
+    }
+}
+
+    .main-content{
+        .originals{
+        .card-row{
+            .card:nth-child(2),
+            .card:nth-child(5){
+                .product-details{
+                    gap: 22px;
+                }
+            }
+        }
+    }
+}
+
+.main-footer{
+    @include components.footer;
+    background-color: colors.$bg-dark;
+}
+
+
+
+.main-header{
+    @include default.mobile{
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 10px;
+        position: relative;
+        .hamburger{
+            display: block;
+            height: 40px;
+            width: 40px;
+            margin-inline-start: 15px;
+            .menu{
+                height: 100%;
+                width: 100%;
+                position: relative;
+                .line{
+                    height: 4px;
+                    width: 100%;
+                    background-color: #fff;
+                    inset: 0;
+                    margin: auto;
+                    position: absolute;
+                    &:first-child{
+                        top: -20px;
+                        transition: transform .5s ease-out, top .5s ease-out .5s;
+                    }
+                    &:last-child{
+                        bottom: -20px;
+                        transition: transform .5s ease-out, bottom .5s ease-out .5s;
+                    }
+                    &:nth-child(2){
+                        opacity: 1;
+                        transition: ease-out opacity .5s .5s;
+                    }
+                }
+            }
+        }
+        .navbar{
+            display: none;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            .main-nav{
+                display: block;
+                background-color: #000;
+                li{
+                    padding-inline-start: 15px;
+                    padding-block-end: 15px;
+                }
+            }
+        }
+        .Logo-image{
+            width: max-content;
+            a{
+                img{
+                    width: 30px;
+                }
+            }
+        }
+        .nav-icons{
+            gap: 4px;
+            margin-inline-end: 4px;
+            padding-inline-end: 15px;
+            a{
+                img{
+                    aspect-ratio: 1;
+                    width: 24px;
+                    gap: 4px;
+                    margin-inline-end: 4px;
+                }
+            }
+        }
+    }
+    input:checked ~ .hamburger .menu .line-1{
+        top: 0;
+        transform: rotate(45deg);
+        transition: top ease-out .5s, transform ease-out .5s .5s;
+    }
+    input:checked ~ .hamburger .menu .line-2{
+        opacity: 0;
+        transition: opacity .7s ease-out;
+    }
+    input:checked ~ .hamburger .menu .line-3{
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: bottom ease-out .5s, transform ease-out .5s .5s;
+    }
+    input:checked ~ .navbar{
+        display: block;
+    }
+}
+
+.main-content{
+    @include default.mobile{
+        .categories{
+            h1{
+                font-size: 18px;
+                padding-block: 20px;
+                padding-inline-start: 15px;
+            }
+            .category-grid{
+                display: grid;
+                grid-template-columns: repeat(2, min-content);
+                grid-template-rows: repeat(3, min-content);
+                place-items: center;
+                justify-content: center;
+                width: 100%;
+                gap: 20px;
+                .grid-item{
+                    &::before{
+                        font-size: 10px;
+                        padding-block: 4px;
+                        padding-inline-start: 0px;
+                        text-align: center;
+                    }
+                    img{
+                        width: 143px;
+                    }
+                }
+            }  
+        }
+    }
+}
+
+.main-content{
+    @include default.mobile{
+        .new-arrivals{
+            padding-inline-start: 15px;
+            padding-block-start: 15px;
+            .heading{
+                h3{
+                font-size: 18px;
+                
+            }
+            img{
+                width: 12px;
+            }
+        }
+        .card-row{
+            margin-block: 0;
+            justify-content: start;
+            padding-inline-start: 0px;
+            padding-block-start: 15px;
+            overflow: scroll;
+            .arrow-left, .arrow-right{
+                display: none;
+            }
+            .card{
+                &:nth-child(2){
+                    @include components.mobile-card-2;
+                }
+                &:nth-child(3){
+                    @include components.mobile-card-2;
+                }
+                &:nth-child(4){
+                    @include components.mobile-card-2;
+                }
+                &:nth-child(5){
+                    @include components.mobile-card-2;
+                }  
+            }
+        }
+    }
+}
+}
+
+.main-content{
+    @include default.mobile{
+        .best-selling{
+            padding-inline-start: 15px;
+            padding-block-start: 60px;
+            .heading{
+                h3{
+                font-size: 18px;
+                
+            }
+            img{
+                width: 12px;
+            }
+        }
+        .card-row{
+            margin-block: 0;
+            justify-content: start;
+            padding-inline-start: 0px;
+            padding-block-start: 15px;
+            overflow: scroll;
+
+            .arrow-left, .arrow-right{
+                display: none;
+            }
+            .card{
+                &:nth-child(2){
+                    @include components.mobile-card-discount-1;
+                }
+                &:nth-child(3){
+                    @include components.mobile-card-discount-2;
+                }
+                &:nth-child(4){
+                    @include components.mobile-card-discount-3;
+                }
+                &:nth-child(5){
+                    @include components.mobile-card-discount-3;
+                }  
+            }
+        }
+    }
+}
+}
+
+
+.main-content{
+    @include default.mobile{
+        .top-picks{
+            padding-inline-start: 15px;
+            padding-block-start: 15px;
+            .heading{
+                h3{
+                font-size: 18px;
+                
+            }
+            img{
+                width: 12px;
+            }
+        }
+        .card-row{
+            margin-block: 0;
+            padding-block: 0;
+            justify-content: start;
+            padding-inline-start: 0px;
+            padding-block-start: 15px;
+            overflow: scroll;
+            .arrow-left, .arrow-right{
+                display: none;
+            }
+            .card{
+                &:nth-child(2){
+                    @include components.mobile-card-1;
+                }
+                &:nth-child(3){
+                    @include components.mobile-card-2;
+                }
+                &:nth-child(4){
+                    @include components.mobile-card-2;
+                }
+                &:nth-child(5){
+                    @include components.mobile-card-2;
+                }  
+            }
+        }
+    }
+}
+}
+
+.main-content{
+    @include default.mobile{
+        .originals{
+            padding-inline-start: 15px;
+            padding-block-start: 15px;
+            .heading{
+                h3{
+                font-size: 18px;
+                
+            }
+            img{
+                width: 12px;
+            }
+        }
+        .card-row{
+            margin-block: 0;
+            padding-block: 0;
+            justify-content: start;
+            padding-inline-start: 0px;
+            padding-block-start: 15px;
+            overflow: scroll;
+            margin-block-end: 30px;
+            .arrow-left, .arrow-right{
+                display: none;
+            }
+            .card{
+                &:nth-child(2){
+                    @include components.mobile-card-discount-1;
+                    .product-details{
+                        .product-price{
+                            padding-block-start: 0;
+                        }
+                    }
+                }
+                &:nth-child(3){
+                    @include components.mobile-card-discount-3;
+                    .product-details{
+                        .product-price{
+                            padding-block-start: 5px;
+                        }
+                    }
+                }
+                &:nth-child(4){
+                    @include components.mobile-card-discount-3;
+                    .product-details{
+                        .product-price{
+                            padding-block-start: 5px;
+                        }
+                    }
+                }
+                &:nth-child(5){
+                    @include components.mobile-card-3;
+                    .product-details{
+                        .product-price{
+                            padding-block-start: 0;
+                        }
+                    }
+                }  
+            }
+        }
+    }
+}
+}
+
+.main-footer{
+    @include default.mobile{
+        @include components.main-mobile-footer;
+        @include components.mobile-footer;     
+}
+}

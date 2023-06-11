@@ -1,0 +1,355 @@
+@use 'utility/colors';
+@use 'utility/fonts';
+@use 'utility/default';
+@use 'utility/components';
+
+
+.main-header{
+    .home-logo{
+        display: flex;
+        justify-content: center;
+        margin-block-start: 60px;
+        margin-block-end: 30px;
+    }
+    .order-message{
+        font-size: fonts.$font-veryhuge;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    p{
+        text-transform: capitalize;
+        font-size: fonts.$font-bigger;
+        text-align: center;
+    }
+}
+
+.main-content{
+    padding-inline: 157px;
+    .order-information{
+        display: flex;
+        width: 100%;
+        font-size: fonts.$font-bigger;
+        justify-content: space-evenly;
+        padding: 21px;
+        border: 3px solid colors.$bg-dark;
+        margin-block-start: 80px;
+        .sec{
+            p:last-child{
+                font-weight: fonts.$fontw-medium;
+                padding-block-start: 18px;
+            }
+        }
+    }
+}
+
+.main-content{
+    padding-block-end: 60px;
+    .split{
+        margin-block-start: 60px;
+        display: flex;
+        gap: 70px;
+        .left{
+            width: 50%;
+            .order-card-big{
+                border: 3px solid colors.$bg-dark;
+                .img{
+                    img{
+                        max-width: 100%;
+                    }
+                }
+                h2{
+                    padding-block-start: 25px;
+                    padding-inline-start: 25px;
+                    font-size: fonts.$font-huge;
+                    width: 90%;
+                }
+                p{
+                    font-size: fonts.$font-big;
+                    padding-inline-start: 25px;
+                    padding-block-start: 10px;
+                }
+                .price{
+                    display: flex;
+                    justify-content: space-between;
+                    padding-block-end: 25px;
+                    padding-inline-end: 25px;
+                    padding-inline-start: 25px;
+                    padding-block-start: 25px;
+                    p:first-child{
+                        color: colors.$text-light;
+                        background-color: colors.$bg-dark;
+                        padding-inline: 10px;
+                        padding-block: 5px;
+                    }
+                }
+            }
+            .summary{
+                text-transform: uppercase;
+                font-size: fonts.$font-bigger;
+                padding-block-start: 20px;
+            }
+            .order-summary-card{
+                @include components.summary-card;
+            }
+        }
+    }
+}
+
+.main-content{
+    .split{
+        .right{
+            width: 50%;
+            .delivery-card-label{
+                h1{
+                    text-transform: uppercase;
+                    font-size: fonts.$font-bigger;
+                    padding-block-end: 20px;
+                }
+            }
+            .address-card{
+                @include components.address-card;
+                .address{
+                    width: 70%;
+                }
+                .icon-group{
+                    padding-block-start: 27px;
+                }
+            }
+            .billing-delivery-card-label{
+                h1{
+                    padding-block-start: 0px;
+                    text-transform: uppercase;
+                    font-size: fonts.$font-bigger;
+                    padding-block-end: 20px;
+                }
+            }
+            .delivery-label{
+                text-transform: uppercase;
+                font-size: fonts.$font-veryhuge;
+                padding-block-end: 35px;
+            }
+            .track-order{
+                padding-block: 15px;
+                width: 100%;
+                background-color: colors.$bg-dark;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-block-start: 60px;
+                margin-block-end: 20px;
+                .track-link{
+                    
+                    .track-button{
+                        display: flex;
+                        background-color: transparent;
+                        color: #fff;
+                        font-size: fonts.$font-big;
+                        text-transform: uppercase;
+                        gap: 15px;
+                        align-items: center;
+
+                    }
+                }
+            }
+            .recipt-order{
+                padding-block: 15px;
+                width: 100%;
+                background-color: colors.$bg-dark;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-block-end: 60px;
+                .recipt-link{
+                    
+                    .recipt-button{
+                        display: flex;
+                        background-color: transparent;
+                        color: #fff;
+                        font-size: fonts.$font-big;
+                        text-transform: uppercase;
+                        gap: 15px;
+                        img{
+                            height: 27px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-footer{
+    @include components.footer;
+    background-color: colors.$bg-dark;
+    *a{
+        text-decoration: none;
+    }
+}
+
+.main-header{
+    @include default.mobile{
+        .home-logo{
+            margin-block-start: 20px;
+            margin-block-end: 24px;
+            a{
+                img{
+                    width: 50px;
+                    height: 32px;
+                }
+            }
+        }
+        .order-message{
+            font-size: 18px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }
+}
+
+.main-content{
+    @include default.mobile{
+        padding-inline: 15px;
+        padding-block-end: 0;
+        .order-information{
+            display: grid;
+            grid-template-columns: repeat(3, max-content);
+            grid-template-rows: repeat(2, max-content);
+            gap: 34px;
+            margin-block-start: 45px;
+            .sec{
+                font-size: 14px;
+                padding: 0;
+                p:last-child{
+                    font-weight: fonts.$fontw-medium;
+                    padding-block-start: 15px;
+                }
+            }
+        }
+        .split{
+            display: block;
+            padding-inline: 0;
+            margin-block: 15px;
+            .left{
+                width: 100%;
+                .order-card-big{
+                    .img{
+                        img{
+                            max-width: 100%;
+                        }
+                    }
+                    h2{
+                        padding-block-start: 25px;
+                        padding-inline-start: 25px;
+                        font-size: 18px;
+                        width: 90%;
+                    }
+                    p{
+                        font-size: 18px;
+                        padding-inline-start: 25px;
+                        padding-block-start: 10px;
+                    }
+                    .price{
+                        display: flex;
+                        justify-content: space-between;
+                        padding-block-end: 25px;
+                        padding-inline-end: 25px;
+                        padding-inline-start: 25px;
+                        padding-block-start: 25px;
+                        p:first-child{
+                            color: colors.$text-light;
+                            background-color: colors.$bg-dark;
+                            padding-inline: 10px;
+                            padding-block: 5px;
+                        }
+                    }
+                }
+                .summary{
+                    font-size: 18px;
+                    padding-block-start: 30px;
+                    padding-block-end: 0;
+                }
+                .order-summary-card{
+                    @include components.mobile-summary-card;
+                    margin-block-start: 15px;
+                    margin-block-end: 0;
+                }
+
+            }
+            .right{
+                width: 100%;
+                .delivery-card-label, .billing-delivery-card-label{
+                    padding-block-start: 30px;
+                    padding-block-end: 15px;
+                    h1{
+                        font-size: 18px;
+                        padding-block-end: 0;
+                    }
+                }
+                .address-card{
+                    @include components.mobile-address-card;
+                    margin-block-end: 30px;
+                }
+                .billing-delivery-card-label{
+                    padding-block-start: 0;
+                }
+                .track-order{
+                    padding-block: 12px;
+                    width: 100%;
+                    background-color: colors.$bg-dark;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-block-start: 30px;
+                    margin-block-end: 20px;
+                    .track-link{
+                        .track-button{
+                            display: flex;
+                            background-color: transparent;
+                            color: #fff;
+                            font-size: 16px;
+                            text-transform: uppercase;
+                            gap: 15px;
+                            align-items: center;
+                            img{
+                                width: 11px;
+                            }
+                        }
+                    }
+                }
+                .recipt-order{
+                    padding-block: 12px;
+                    width: 100%;
+                    background-color: colors.$bg-dark;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-block-end: 60px;
+                    .recipt-link{
+                        
+                        .recipt-button{
+                            display: flex;
+                            background-color: transparent;
+                            color: #fff;
+                            font-size: 16px;
+                            text-transform: uppercase;
+                            gap: 15px;
+                            align-items: center;
+                            justify-content: center;
+                            img{
+                                height: 22px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-footer{
+    @include default.mobile{
+        @include components.main-mobile-footer;
+        @include components.mobile-footer;     
+}
+}

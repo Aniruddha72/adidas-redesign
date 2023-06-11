@@ -1,0 +1,269 @@
+@use 'utility/colors';
+@use 'utility/fonts';
+@use 'utility/default';
+@use 'utility/components';
+
+.main-header{
+    display: flex;
+    background-color: colors.$bg-dark;
+    padding-block: 22px;
+    width: 100%;
+    justify-content: space-between;
+    input{
+        display: none;
+    }
+    .Logo-image{
+        margin-inline-start: 22px;
+        width: 25%;
+        img{
+            max-width: 100%;
+        }
+    }
+    .hamburger{
+        display: none;
+    }
+}
+
+.main-header{
+    .navbar{
+        z-index: 1;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .main-nav{
+            display: flex;
+            list-style: none;
+            width: 100%;
+            justify-content: center;
+            gap: 25px;
+            li{
+                a{
+                    color: colors.$text-light;
+                    font-size: fonts.$font-big;
+
+                }
+            }
+        }
+    }
+    .nav-icons{
+        margin-inline-end: 22px;
+        width: 25%;
+        display: flex;
+        justify-content: end;
+        gap: 25px;
+        img{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.main-content{
+    padding-block-end: 50px;
+    .heading{
+        h1{
+            padding-block: 72px;
+            text-transform: uppercase;
+            font-size: 48px;
+            font-family: fonts.$font-roboto;
+            padding-inline-start: 100px;
+        }
+    }
+}
+
+.main-content{
+    .product-grid{
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        grid-template-rows: repeat(2, min-content);
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        .card:nth-child(1),
+        .card:nth-child(2),
+        .card:nth-child(3){
+            @include components.product-card-discount;
+        }
+        .card:nth-child(4),
+        .card:nth-child(5){
+            @include components.product-card;
+        }
+    }
+}
+
+.main-content{
+    .product-grid{
+        .card:nth-child(2),
+        .card:nth-child(4){
+            .product-details{
+                gap: 22px;
+            }
+        }
+    }
+}
+
+.main-content{
+    .product-grid{
+        .card{
+            .product-details{
+                .product-link{
+                    h3{
+                        color: #fff;
+                        font-weight: fonts.$font-regular;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-footer{
+    @include components.footer;
+    background-color: colors.$bg-dark;
+}
+
+
+.main-header{
+    @include default.mobile{
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 10px;
+        position: relative;
+        .hamburger{
+            display: block;
+            height: 40px;
+            width: 40px;
+            margin-inline-start: 15px;
+            .menu{
+                height: 100%;
+                width: 100%;
+                position: relative;
+                .line{
+                    height: 4px;
+                    width: 100%;
+                    background-color: #fff;
+                    inset: 0;
+                    margin: auto;
+                    position: absolute;
+                    &:first-child{
+                        top: -20px;
+                        transition: transform .5s ease-out, top .5s ease-out .5s;
+                    }
+                    &:last-child{
+                        bottom: -20px;
+                        transition: transform .5s ease-out, bottom .5s ease-out .5s;
+                    }
+                    &:nth-child(2){
+                        opacity: 1;
+                        transition: ease-out opacity .5s .5s;
+                    }
+                }
+            }
+        }
+        .navbar{
+            display: none;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            .main-nav{
+                display: block;
+                background-color: #000;
+                li{
+                    padding-inline-start: 15px;
+                    padding-block-end: 15px;
+                }
+            }
+        }
+        .Logo-image{
+            width: max-content;
+            a{
+                img{
+                    width: 30px;
+                }
+            }
+        }
+        .nav-icons{
+            gap: 4px;
+            margin-inline-end: 4px;
+            padding-inline-end: 15px;
+            a{
+                img{
+                    aspect-ratio: 1;
+                    width: 24px;
+                    gap: 4px;
+                    margin-inline-end: 4px;
+                }
+            }
+        }
+    }
+    input:checked ~ .hamburger .menu .line-1{
+        top: 0;
+        transform: rotate(45deg);
+        transition: top ease-out .5s, transform ease-out .5s .5s;
+    }
+    input:checked ~ .hamburger .menu .line-2{
+        opacity: 0;
+        transition: opacity .7s ease-out;
+    }
+    input:checked ~ .hamburger .menu .line-3{
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: bottom ease-out .5s, transform ease-out .5s .5s;
+    }
+    input:checked ~ .navbar{
+        display: block;
+    }
+}
+
+.main-content{
+    @include default.mobile{
+    .heading{
+        h1{
+            font-size: 18px;
+            padding-inline-start: 15px;
+            padding-block-start: 20px;
+            padding-block-end: 25px;
+        }
+    }
+}
+}
+
+.main-content{
+    @include default.mobile{
+        .product-grid{
+            display: grid;
+            grid-template-columns: repeat(2, min-content);
+            grid-template-rows: repeat(3, min-content);
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            .card:nth-child(1){
+                @include components.mobile-card-discount-3;
+            }
+            .card:nth-child(2){
+                @include components.mobile-card-discount-1;
+            }
+            .card:nth-child(3){
+                @include components.mobile-card-discount-3;
+            }
+            .card:nth-child(4){
+                @include components.mobile-card-3;
+            }
+            .card:nth-child(5){
+                @include components.mobile-card-2;
+            }
+
+        }
+    }
+}
+
+
+.main-footer{
+    @include default.mobile{
+        @include components.main-mobile-footer;
+        @include components.mobile-footer;     
+}
+}
