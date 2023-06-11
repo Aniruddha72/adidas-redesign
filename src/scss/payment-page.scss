@@ -1,0 +1,448 @@
+@use 'utility/colors';
+@use 'utility/fonts';
+@use 'utility/default';
+@use 'utility/components';
+
+.main-header{
+    display: flex;
+    .left{
+        width: 60%;
+    h1{
+        text-transform: uppercase;
+        font-size: fonts.$font-veryhuge;
+        padding-block-start: 50px;
+        padding-inline: 60px;
+        padding-block-end: 35px;
+    }
+}
+    .right{
+        width: 40%;
+        @include components.page-links;
+        a{
+            .bag{
+                text-decoration: none;
+            }
+            .payment{
+                text-decoration: underline;
+            }
+        }
+}
+}
+
+.main-content{
+    display: flex;
+    gap: 40px;
+    padding-inline: 60px;
+    .left{
+        width: 60%;
+        .payment-method{
+            .accordion{
+                margin-block-end: 20px;
+            }
+            .accordion-upi{
+                .accordion-item{
+                    border: 0px;
+                    border-radius: 0px;
+                    .accordion-header{
+                    border: 3px solid colors.$bg-dark;
+                    .accordion-button{
+                        color: colors.$text-dark;
+                        font-size: fonts.$font-big;
+                        text-decoration: uppercase;
+                    }
+                    }
+                    .accordion-body{
+                        padding-inline: 0;
+                        padding-block-start: 30px;
+                        .upi-group{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            #upi{
+                                padding-block: 10px;
+                                padding-inline: 15px;
+                                border: 1px solid colors.$bg-dark;
+                            }
+                        }
+                    }
+                }
+            }
+            .accordion-credit{
+                .accordion-item{
+                    border: 0px;
+                    border-radius: 0px;
+                    .accordion-header{
+                        border: 3px solid colors.$bg-dark;
+                        border-radius: 0%;
+                        .accordion-button{
+                            color: colors.$text-dark;
+                            font-size: fonts.$font-big;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .accordion-body{
+                        padding-inline: 0;
+                        
+                        .credit-group{
+                            .credit-form{
+                                ._row-1, ._row-2{
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 8px;
+                                    padding-block-start: 20px;
+                                    input{
+                                        padding-block: 10px;
+                                        padding-inline: 15px;
+                                        border-radius: 0%;
+                                        border: 1px solid colors.$bg-dark;
+                                        font-size: fonts.$font-big;
+                                    }
+                                    label{
+                                        font-size: fonts.$font-medium;
+                                    }
+                                }
+                                .info-group{
+                                    display: flex;
+                                    padding-block-start: 20px;
+                                    ._item-1 , ._item-2{
+                                        display: flex;
+                                        width: 50%;
+                                        flex-direction: column;
+                                        gap: 8px;
+                                        input{
+                                            width: 40%;
+                                            padding-block: 10px;
+                                            padding-inline: 15px;
+                                            border: 1px solid colors.$bg-dark;
+                                            font-size: fonts.$font-big;
+                                        }
+                                        label{
+                                            font-size: fonts.$font-medium;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .accordion-cod{
+                .accordion-item{
+                    border: 0;
+                    border-radius: 0;
+                    .accordion-header{
+                        border: 3px solid colors.$bg-dark;
+                        border-radius: 0%;
+                        .accordion-button{
+                            color: colors.$text-dark;
+                            font-size: fonts.$font-big;
+                            text-decoration: uppercase;
+                        }
+                    }
+                    .accordion-body{
+                        padding-inline: 0;
+                        .cod{
+                            .msg{
+                                font-size: fonts.$font-big;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .order-button{
+            a{
+                button{
+                    width: 100%;
+                    padding-block: 10px;
+                    padding-inline: 15px;
+                    background-color: colors.$bg-dark;
+                    color: colors.$text-light;
+                    font-size: fonts.$font-big;
+                    margin-block-start: 60px;
+                }
+            }
+        }
+    }
+}
+
+.main-content{
+    .right{
+        width: 40%;
+        .summary{
+            text-transform: uppercase;
+            font-size: fonts.$font-bigger;
+        }
+        ._order-summary-card{
+            @include components.summary-card-bs;
+        }
+        .order-card-label{
+            h1{
+                text-transform: uppercase;
+                font-size: fonts.$font-bigger;
+                padding-block-start: 37px;
+            }
+        }
+        .order-card{
+            @include components.order-card-bs;
+        }
+        .delivery-card-label{
+            h1{
+                text-transform: uppercase;
+                font-size: fonts.$font-bigger;
+                padding-block-start: 37px;
+                padding-block-end: 20px;
+            }
+        }
+        .address-card{
+            @include components.address-card-bs;
+            .address{
+                width: 70%;
+            }
+            .icon-group{
+                padding-block-start: 27px;
+            }
+        }
+        .billing-delivery-card-label{
+            h1{
+                padding-block-start: 0px;
+                text-transform: uppercase;
+                font-size: fonts.$font-bigger;
+                padding-block-end: 20px;
+            }
+        }
+        .delivery-label{
+            text-transform: uppercase;
+            font-size: fonts.$font-veryhuge;
+            padding-block-end: 35px;
+        }
+        .delivery-option{
+            @include components.delivery-card-bs;
+        }
+    }
+}
+
+.main-footer{
+    @include components.footer;
+    background-color: colors.$bg-dark;
+    *a{
+        text-decoration: none;
+    }
+}
+
+.main-header{
+    @include default.mobile{
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-inline: 15px;
+        padding-block-start: 30px;
+        .left{
+            width: 100%;
+            h1{
+                font-size: 18px;
+                padding-inline-start: 15px;
+                padding-inline-end: 15px;
+                padding-block-start: 40px;
+                padding-block-end: 15px;
+            }
+        }
+        .right{
+            a{
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.main-content{
+    @include default.mobile{
+        display: block;
+        padding-inline: 0px;
+        .left, .right{
+            width: 100%;
+        }
+        .left{
+            .payment-method{
+                .accordion{
+                    padding-inline: 15px;
+                    .accordion-item{
+                        .accordion-header{
+                            .accordion-button{
+                                padding-block: 5px;
+                                input*{
+                                    padding-block: 5px;
+                                    padding-inline: 10px;
+                                }
+                            }
+                        }
+                        .accordion-body{
+                            padding-block-start: 15px;
+                        }
+                    }
+                }
+                .accordion-credit{
+                    .accordion-item{
+                        .accordion-body{
+                            padding-block-start: 0px;
+                            .credit-group{
+                                .credit-form{
+                                    ._row-1, ._row-2 {
+                                        padding-block-start: 15px;
+                                        input{
+                                            padding-block: 5px;
+                                            font-size: 16px;
+                                        }
+                                        label{
+                                            font-size: 14px;
+                                        }
+                                    }
+                                    .info-group{
+                                        ._item-1, ._item-2{
+                                            input{
+                                                padding-block: 5px;
+                                                font-size: 16px;
+                                            }
+                                            label{
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .accordion-credit{
+                    .accordion-item{
+                        .accordion-body{
+                            padding-block-start: 0px;
+                            .credit-group{
+                                .credit-form{
+                                    ._row-1, ._row-2 {
+                                        padding-block-start: 15px;
+                                        input{
+                                            padding-block: 5px;
+                                            font-size: 16px;
+                                        }
+                                        label{
+                                            font-size: 14px;
+                                        }
+                                    }
+                                    .info-group{
+                                        ._item-1, ._item-2{
+                                            input{
+                                                padding-block: 5px;
+                                                font-size: 16px;
+                                            }
+                                            label{
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .accordion-cod{
+                    .accordion-item{
+                        .accordion-body{
+                            padding-block-start: 15px;
+                            .cod{
+                                .msg{
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .order-button{
+                    display: none;
+                }
+            }
+        }
+        .right{
+            .summary{
+                font-size: 18px;
+                padding-inline: 15px;
+                padding-block-start: 15px;
+            }
+            ._order-summary-card{
+                @include components.mobile-summary-card-bs;
+                margin-inline: 15px;
+            }
+            .order-button{
+                padding-inline: 15px;
+                a{
+                    button{
+                        width: 100%;
+                        padding-block: 5px;
+                        padding-inline: 15px;
+                        background-color: colors.$bg-dark;
+                        color: colors.$text-light;
+                        font-size: 16px;
+                        margin-block-start: 30px;
+                    }
+                }
+            }
+            .order-card-label{
+                h1{
+                    font-size: 18px;
+                    padding-inline: 15px;
+                    padding-block-start: 15px;
+                }
+            }
+            .order-card{
+                @include components.mobile-order-card-bs;
+                margin-inline: 15px;
+            }
+            .delivery-card-label, .billing-delivery-card-label{
+                h1{
+                    font-size: 18px;
+                    padding-inline: 15px;
+                    padding-block-start: 0px;
+                    padding-block-end: 10px;
+                }
+            }
+            .address-card{
+                @include components.mobile-address-card;
+                margin-inline: 15px;
+            }
+            .delivery-label{
+                font-size: 18px;
+                padding-block-end: 0px;
+                padding-inline: 15px;
+            }
+             .delivery-option{
+                margin-inline: 15px;
+                padding: 15px;
+                ._row-1{
+                    padding: 0;
+                    .option-name{
+                        font-size: 16px;
+                        padding-block-end: 0px;
+                    }
+                    margin: 0;
+                }
+                ._row-2{
+                    padding-inline: 0;
+                    .delivery-details{
+                        padding: 0;
+                        margin: 0;
+                        font-size: 14px;
+                    }
+                }
+             }  
+        }
+    }
+}
+
+.main-footer{
+    @include default.mobile{
+        @include components.main-mobile-footer;
+        @include components.mobile-footer;     
+}
+}

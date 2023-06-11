@@ -1,0 +1,577 @@
+@use 'utility/colors';
+@use 'utility/fonts';
+@use 'utility/default';
+@use 'utility/components';
+
+.main-header{
+    display: flex;
+    background-color: colors.$bg-dark;
+    padding-block: 22px;
+    width: 100%;
+    justify-content: space-between;
+    input{
+        display: none;
+    }
+    .Logo-image{
+        margin-inline-start: 22px;
+        width: 25%;
+        img{
+            max-width: 100%;
+        }
+    }
+    .hamburger{
+        display: none;
+    }
+}
+
+.main-header{
+    .navbar{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .main-nav{
+            display: flex;
+            list-style: none;
+            width: 100%;
+            justify-content: center;
+            gap: 25px;
+            li{
+                a{
+                    color: colors.$text-light;
+                    font-size: fonts.$font-big;
+
+                }
+            }
+        }
+    }
+    .nav-icons{
+        margin-inline-end: 22px;
+        width: 25%;
+        display: flex;
+        justify-content: end;
+        gap: 25px;
+        img{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.offers{
+    background-color: colors.$bg-dim;
+    display: flex;
+    justify-content: space-around;
+    padding-block: 25px;
+    p{
+        color: #fff;
+        text-transform: uppercase;
+    }
+}
+
+    .deal-adidas{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .left-section{
+            width: 50%;
+            background-color: colors.$offer-color;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            .text{
+                text-align: center;
+                color: #fff;
+                margin-top: 140px;
+                h1{
+                    font-size: 80px;
+                    letter-spacing: 32px;
+                    padding-block-end: 18px;
+                    border-bottom: 6px solid #fff;
+                }
+                h3{
+                    text-transform: uppercase;
+                    font-size: 48px;
+                    padding-top: 30px;
+                }
+                p{
+                    text-transform: uppercase;
+                    width: 70%;
+                    margin-inline: auto;
+                    padding-block-start: 20px;
+                }
+            }
+            .logo-wrapper{
+                width: 100%;
+                display: flex;
+                justify-content: end;
+                padding-inline-end: 40px;
+                gap: 25px;
+                padding-block-end: 40px;
+                margin-block-start: 80px;
+            }
+        }
+        .right-section{
+            width: 50%;
+            img{
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .shop-now{
+        width: 100%;
+        background-color: colors.$bg-dim;
+        .category-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 36px;
+            padding-block-start: 195px;
+            .category-1{
+                background-image: url('/images/product/Home-Page/Tshirts.png');
+                @include components.category;
+                a{
+                    @include components.category-label;
+                    font-weight: fonts.$font-bold;
+                    font-size: fonts.$font-medium;
+                }
+            }
+            .category-2{
+                background-image: url('/images/product/Home-Page/Shorts.png');
+                @include components.category;
+                a{
+                    @include components.category-label;
+                    font-weight: fonts.$font-bold;
+                    font-size: fonts.$font-medium;
+                }
+            }
+            .category-3{
+                background-image: url('/images/product/Home-Page/Sweatshirts.png');
+                @include components.category;
+                a{
+                    @include components.category-label;
+                    font-weight: fonts.$font-bold;
+                    font-size: fonts.$font-medium;
+                }
+            }
+        }
+        .category-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-block-start: 65px;
+            gap: 65px;
+            padding-block-end: 65px;
+            a{
+                display: flex;
+                font-size: 28px;
+                border: 4px solid #fff;
+                padding-block: 10px;
+                padding-inline: 20px;
+                color: #fff;
+                text-transform: uppercase;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    }
+
+    .card-row{
+    .card{
+        @include components.product-card;
+        .product-details{
+            .product-link{
+                color: #fff;
+                h3{
+                    text-transform: uppercase;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+    .main-content{
+        padding-block-start: 44px;
+        .top-picks{
+        @include components.row-label;
+        a{
+            h3{
+                font-size: fonts.$font-big;
+                font-weight: fonts.$font-medium;
+            }
+        }
+    }
+    }
+
+    .card-row-1{
+        @include components.card-row;
+        .card:nth-child(1){
+            .product-details{
+                gap: 22px;
+            }
+        }
+        .card:nth-child(3){
+            .product-details{
+                gap: 22px;
+            }
+        }
+    }
+
+    .main-content{
+        .for-you{
+            @include components.row-label;
+            a{
+                h3{
+                    font-size: fonts.$font-big;
+                    font-weight: fonts.$font-medium;
+                }
+            }
+        }
+        .card-row{
+            @include components.card-row;
+        }
+    }
+
+    .card-row-2{
+        @include components.card-row;
+        .card:nth-child(1){
+            .product-details{
+                gap: 22px;
+            }
+        }
+        .card:nth-child(3){
+            .product-details{
+                gap: 22px;
+            }
+        }
+    }
+
+    .main-content{
+        .new-arrivals{
+            @include components.row-label;
+        a{
+            h3{
+                font-size: fonts.$font-big;
+                font-weight: fonts.$font-medium;
+            }
+        }
+    }
+    }
+
+    .main-footer{
+        @include components.footer;
+        background-color: colors.$bg-dark;
+        .mobile-footer{
+            display: none;
+        }
+    }
+
+
+    .main-header{
+        @include default.mobile{
+            justify-content: space-between;
+            align-items: center;
+            padding-block: 10px;
+            position: relative;
+            .hamburger{
+                display: block;
+                height: 40px;
+                width: 40px;
+                margin-inline-start: 15px;
+                .menu{
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+                    .line{
+                        height: 4px;
+                        width: 100%;
+                        background-color: #fff;
+                        inset: 0;
+                        margin: auto;
+                        position: absolute;
+                        &:first-child{
+                            top: -20px;
+                            transition: transform .5s ease-out, top .5s ease-out .5s;
+                        }
+                        &:last-child{
+                            bottom: -20px;
+                            transition: transform .5s ease-out, bottom .5s ease-out .5s;
+                        }
+                        &:nth-child(2){
+                            opacity: 1;
+                            transition: ease-out opacity .5s .5s;
+                        }
+                    }
+                }
+            }
+            .navbar{
+                display: none;
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                .main-nav{
+                    display: block;
+                    background-color: #000;
+                    li{
+                        padding-inline-start: 15px;
+                        padding-block-end: 15px;
+                    }
+                }
+            }
+            .Logo-image{
+                width: max-content;
+                a{
+                    img{
+                        width: 30px;
+                    }
+                }
+            }
+            .nav-icons{
+                gap: 4px;
+                margin-inline-end: 4px;
+                padding-inline-end: 15px;
+                a{
+                    img{
+                        aspect-ratio: 1;
+                        width: 24px;
+                        gap: 4px;
+                        margin-inline-end: 4px;
+                    }
+                }
+            }
+        }
+        input:checked ~ .hamburger .menu .line-1{
+            top: 0;
+            transform: rotate(45deg);
+            transition: top ease-out .5s, transform ease-out .5s .5s;
+        }
+        input:checked ~ .hamburger .menu .line-2{
+            opacity: 0;
+            transition: opacity .7s ease-out;
+        }
+        input:checked ~ .hamburger .menu .line-3{
+            bottom: 0;
+            transform: rotate(-45deg);
+            transition: bottom ease-out .5s, transform ease-out .5s .5s;
+        }
+        input:checked ~ .navbar{
+            display: block;
+        }
+    }
+
+    .offers{
+        @include default.mobile{
+            display: none;
+        }
+    }
+
+    .deal-adidas{
+        @include default.mobile{
+            .right-section{
+                display: none;
+            }
+            .left-section{
+                width: 100%;
+                justify-content: center;
+                .text{
+                    h1{
+                        font-size: 50px;
+                        text-align: center;
+                        letter-spacing: 13px;
+                    }
+                    h3{
+                        font-size: 32px;
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                }
+                .logo-wrapper{
+                    margin-block-start: 35px;
+                    padding-block-end: 15px;
+                    img{
+                        width: 37px;
+                    }
+                }
+            }
+        }
+    }
+
+    .shop-now{
+        @include default.mobile{
+        .category-container{
+            display: block;
+            padding-block-start: 38px;
+            padding-inline-start: 20px;
+            .category-1, .category-2, .category-3{
+                background-image: none;
+                height: auto;
+                width: auto;
+                background-color: none;
+                padding-block-end: 17px;
+                > a{
+                    background-color: initial;
+                    p{
+                        text-decoration: underline;
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+        .category-btn{
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                margin-block-start: 60px;
+                gap: 15px;
+                padding-block-end: 20px;
+                padding-inline-start: 20px;
+                a{
+                    display: flex;
+                    font-size: 28px;
+                    border: 2px solid #fff;
+                    padding-block: 5px;
+                    padding-inline: 10px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 15px;
+                    p{
+                        font-size: 16px;
+                    }
+                    img{
+                        width: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-content{
+        @include default.mobile{
+            padding-block: 15px;
+            .top-picks{
+                padding-inline-start: 15px;
+                a{
+                    h3{
+                        font-size: 18px;
+                        font-weight: normal;
+                    }
+                    img{
+                        width: 12px;
+                    }
+                }
+            }
+            .card-row-1{
+                overflow: scroll;
+                gap: 25px;
+                justify-content: start;
+                margin-block: 15px;
+                padding-inline-start: 15px;
+                .card{
+                    @include components.mobile-card-1;
+                }
+                .card{
+                    &:nth-child(2){
+                        @include components.mobile-card-2;
+                    }
+                    &:nth-child(4){
+                        @include components.mobile-card-3;
+                    }
+                }
+                }
+            }
+        }
+
+        .main-content{
+            @include default.mobile{
+                .for-you{
+                    padding-inline-start: 15px;
+                    a{
+                        h3{
+                            font-size: 18px;
+                            font-weight: normal;
+                        }
+                        img{
+                            width: 12px;
+                        }
+                    }
+                }
+                .card-row-2{
+                    overflow: scroll;
+                    justify-content: start;
+                    padding-inline-start: 15px;
+                    margin-block: 15px;
+                    .card{
+                        &:nth-child(1){
+                            @include components.mobile-card-2;
+                        }
+                        &:nth-child(2){
+                            @include components.mobile-card-2;
+                        }
+                        &:nth-child(3){
+                            @include components.mobile-card-2;
+                        }
+                        &:nth-child(4){
+                            @include components.mobile-card-3;
+                        }
+                    }
+                }
+            }
+        }
+
+        .main-content{
+            @include default.mobile{
+                .new-arrivals{
+                    margin-block: 15px;
+                    padding-inline-start: 15px;
+                    a{
+                        h3{
+                            font-weight: normal;
+                            font-size: 18px;
+                        }
+                        img{
+                            width: 12px;
+                        }
+                    }
+                }
+                .card-row-3{
+                    overflow: scroll;
+                    margin-block: 0;
+                    justify-content: start;
+                    padding-inline-start: 15px;
+                    .card{
+                        &:nth-child(1){
+                            @include components.mobile-card-2;
+                        }
+                        &:nth-child(2){
+                            @include components.mobile-card-3;
+                        }
+                        &:nth-child(3){
+                            @include components.mobile-card-3;
+                        }
+                        &:nth-child(4){
+                            @include components.mobile-card-2;
+                        }
+                    }
+            }
+            }
+        }
+
+        .main-footer{
+            @include default.mobile{
+                @include components.main-mobile-footer;
+                @include components.mobile-footer;     
+        }
+    }
+
+
+

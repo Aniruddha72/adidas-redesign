@@ -1,0 +1,345 @@
+@use 'utility/colors';
+@use 'utility/fonts';
+@use 'utility/default';
+@use 'utility/components';
+
+.main-header{
+    display: flex;
+    background-color: colors.$bg-dark;
+    padding-block: 22px;
+    width: 100%;
+    justify-content: space-between;
+    input{
+        display: none;
+    }
+    .Logo-image{
+        margin-inline-start: 22px;
+        width: 25%;
+        img{
+            max-width: 100%;
+        }
+    }
+    .hamburger{
+        display: none;
+    }
+}
+
+.main-header{
+    .navbar{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .main-nav{
+            display: flex;
+            list-style: none;
+            width: 100%;
+            justify-content: center;
+            gap: 25px;
+            li{
+                a{
+                    color: colors.$text-light;
+                    font-size: fonts.$font-big;
+
+                }
+            }
+        }
+    }
+    .nav-icons{
+        margin-inline-end: 22px;
+        width: 25%;
+        display: flex;
+        justify-content: end;
+        gap: 25px;
+        img{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.sub-header{
+    padding-inline: 60px;
+    padding-block-start: 72px;
+    display: flex;
+    .left{
+        width: 60%;
+        h1{
+            text-transform: uppercase;
+            font-size: fonts.$font-veryhuge;
+            padding-block-end: 7px;
+        }
+        .order-amount-heading{
+            font-size: fonts.$font-big;
+        }
+    }
+    .right{
+        @include components.page-links;
+    }
+}
+
+.main-content{
+    padding-inline-start: 60px;
+    padding-block-start: 46px;
+    display: flex;
+    gap: 36px;
+    .left{
+        width: 60%;
+        .order-card{
+            @include components.order-card-horizontal;
+    }
+}
+}
+
+.main-content{
+    .right{
+        width: 40%;
+        padding-inline-end: 60px;
+        .summary{
+            text-transform: uppercase;
+            font-size: fonts.$font-bigger;
+        }
+        .order-summary-card{
+            @include components.summary-card;
+        }
+        .pincode{
+            border: 3px solid colors.$bg-dark;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-inline-end: 20px;
+            margin-block-start: 20px;
+            label{
+                .pincode-label{
+                        color: colors.$text-dark;
+                        text-decoration: none;
+                        font-size: fonts.$font-big;
+                    
+                }
+            }
+        .pincode-input{
+            padding-inline-start: 20px;
+            padding-block: 16px;
+            font-size: fonts.$font-big;
+            width: 100%;
+            border: none;
+        }
+    }
+    .checkout{
+        padding-block: 15px;
+        width: 100%;
+        background-color: colors.$bg-dark;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-block-start: 60px;
+        margin-block-end: 60px;
+        .checkout-link{
+            
+            .checkout-button{
+                display: flex;
+                background-color: transparent;
+                color: #fff;
+                font-size: fonts.$font-big;
+                text-transform: uppercase;
+                gap: 15px;
+
+            }
+        }
+    }
+    }
+}
+
+.main-footer{
+    @include components.footer;
+    background-color: colors.$bg-dark;
+}
+
+.main-footer{
+    @include default.mobile{
+        @include components.main-mobile-footer;
+        @include components.mobile-footer;     
+}
+}
+
+.main-header{
+    @include default.mobile{
+        justify-content: space-between;
+        align-items: center;
+        padding-block: 10px;
+        position: relative;
+        .hamburger{
+            display: block;
+            height: 40px;
+            width: 40px;
+            margin-inline-start: 15px;
+            .menu{
+                height: 100%;
+                width: 100%;
+                position: relative;
+                .line{
+                    height: 4px;
+                    width: 100%;
+                    background-color: #fff;
+                    inset: 0;
+                    margin: auto;
+                    position: absolute;
+                    &:first-child{
+                        top: -20px;
+                        transition: transform .5s ease-out, top .5s ease-out .5s;
+                    }
+                    &:last-child{
+                        bottom: -20px;
+                        transition: transform .5s ease-out, bottom .5s ease-out .5s;
+                    }
+                    &:nth-child(2){
+                        opacity: 1;
+                        transition: ease-out opacity .5s .5s;
+                    }
+                }
+            }
+        }
+        .navbar{
+            display: none;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            .main-nav{
+                display: block;
+                background-color: #000;
+                li{
+                    padding-inline-start: 15px;
+                    padding-block-end: 15px;
+                }
+            }
+        }
+        .Logo-image{
+            width: max-content;
+            a{
+                img{
+                    width: 30px;
+                }
+            }
+        }
+        .nav-icons{
+            gap: 4px;
+            margin-inline-end: 4px;
+            padding-inline-end: 15px;
+            a{
+                img{
+                    aspect-ratio: 1;
+                    width: 24px;
+                    gap: 4px;
+                    margin-inline-end: 4px;
+                }
+            }
+        }
+    }
+    input:checked ~ .hamburger .menu .line-1{
+        top: 0;
+        transform: rotate(45deg);
+        transition: top ease-out .5s, transform ease-out .5s .5s;
+    }
+    input:checked ~ .hamburger .menu .line-2{
+        opacity: 0;
+        transition: opacity .7s ease-out;
+    }
+    input:checked ~ .hamburger .menu .line-3{
+        bottom: 0;
+        transform: rotate(-45deg);
+        transition: bottom ease-out .5s, transform ease-out .5s .5s;
+    }
+    input:checked ~ .navbar{
+        display: block;
+    }
+}
+
+.sub-header{
+    @include default.mobile{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    padding: 0;
+    .left{
+        width: 100%;
+        padding-block-start: 40px;
+        padding-inline: 15px;
+        h1{
+            font-size: 18px;
+        }
+        .order-amount-heading{
+            font-size: 14px;
+        }
+    }
+    .right{
+        width: 100%;
+        padding-inline: 53px;
+        padding-block-start: 40px;
+        a{
+            p{
+                font-size: 16px;
+            }
+        }
+    }
+}
+}
+
+.main-content{
+    @include default.mobile{
+        display: block;
+        padding-inline: 15px;
+        padding-block-start: 12px;
+        .left{
+            width: 100%;
+            .order-card{
+                @include components.mobile-order-card;
+            }
+        }
+        .right{
+            width: 100%;
+            padding-inline: 0;
+            .summary{
+                font-size: 18px;
+                padding-block-start: 15px;
+                padding-inline: 0;
+            }
+            .order-summary-card{
+                @include components.mobile-summary-card;
+            }
+        }
+}
+}
+
+.main-content{
+    @include default.mobile{
+        .right{
+            .pincode{
+                .pincode-input{
+                    padding-block: 6px;
+                    padding-inline: 6px;
+                    font-size: 16px;
+                }
+                label{
+                    .pincode-label{
+                        font-size: 16px;
+                    }
+                }
+            }
+            .checkout{
+                padding: 0;
+                margin-block-start: 15px;
+                .checkout-link{
+                    .checkout-button{
+                        font-size: 16px;
+                        padding-block: 6px;
+                        padding-inline: 6px;
+                        > img{
+                            width: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

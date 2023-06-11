@@ -1,0 +1,209 @@
+@use 'utility/colors';
+@use 'utility/fonts';
+@use 'utility/default';
+@use 'utility/components';
+
+.main-header{
+    display: flex;
+    .left{
+        width: 60%;
+    h1{
+        text-transform: uppercase;
+        font-size: fonts.$font-veryhuge;
+        padding-block-start: 50px;
+        padding-inline: 60px;
+        padding-block-end: 35px;
+    }
+}
+    .right{
+        width: 40%;
+        @include components.page-links;
+        a{
+            .bag{
+                text-decoration: none;
+            }
+            .address{
+                text-decoration: underline;
+            }
+        }
+}
+}
+
+.main-content{
+    display: flex;
+    width: 100%;
+    gap: 41px;
+    padding-inline: 60px;
+    .left{
+        width: 60%;
+        .address-card{
+            @include components.address-card;
+        }
+        .delivery-label{
+            text-transform: uppercase;
+            font-size: fonts.$font-veryhuge;
+            padding-block-end: 35px;
+        }
+    }
+}
+
+.main-content{
+    .left{
+        .delivery-option{
+                @include components.delivery-card;
+        }
+        .pay{
+            padding-block: 15px;
+            width: 100%;
+            background-color: colors.$bg-dark;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-block-start: 60px;
+            margin-block-end: 60px;
+            .pay-link{
+                
+                .pay-button{
+                    display: flex;
+                    background-color: transparent;
+                    color: #fff;
+                    font-size: fonts.$font-big;
+                    text-transform: uppercase;
+                    gap: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+.main-content{
+    .right{
+        width: 40%;
+        .summary{
+            text-transform: uppercase;
+            font-size: fonts.$font-bigger;
+        }
+        .order-summary-card{
+            @include components.summary-card;
+        }
+        .order-card-label{
+            h1{
+                text-transform: uppercase;
+                font-size: fonts.$font-bigger;
+                padding-block-start: 37px;
+            }
+        }
+        .order-card{
+            @include components.order-card-small;
+        }
+    }
+}
+
+.main-footer{
+    @include components.footer;
+    background-color: colors.$bg-dark;
+}
+
+.main-header{
+    @include default.mobile{
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-inline: 15px;
+        padding-block-start: 30px;
+        .left{
+            width: 100%;
+            h1{
+                font-size: 18px;
+                padding-inline-start: 15px;
+                padding-inline-end: 15px;
+                padding-block-start: 40px;
+            }
+        }
+        .right{
+            a{
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+.main-content{
+    @include default.mobile{
+        padding-inline: 15px;
+        display: block;
+        .left, .right{
+            width: 100%;
+            padding-inline: 15px;
+        }
+        .left{
+            .address-card{
+                @include components.mobile-address-card;
+            }
+            .delivery-label{
+                font-size: 18px;
+                padding-block: 0;
+                padding-block-end: 15px;
+            }
+            .delivery-option{
+                @include components.mobile-delivery-card;
+            }
+            .pay{
+                display: none;
+            }
+        }
+        .right{
+            .summary{
+                font-size: 18px;
+                padding-block-start: 30px;
+                padding-block-end: 0;
+            }
+            .order-summary-card{
+                @include components.mobile-summary-card;
+                // margin-block-start: 15px;
+            }
+            .order-card-label{
+                h1{
+                    font-size: 18px;
+                    padding-block-end: 15px;
+                }
+            }
+            .order-card{
+                @include components.mobile-order-card-2;
+            }
+            .pay{
+                padding-block: 10px;
+                width: 100%;
+                background-color: colors.$bg-dark;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-block-start: 30px;
+                margin-block-end: 30px;
+                .pay-link{
+                    
+                    .pay-button{
+                        display: flex;
+                        background-color: transparent;
+                        color: #fff;
+                        font-size: 16px;
+                        text-transform: uppercase;
+                        gap: 15px;
+                        img{
+                            width: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main-footer{
+    @include default.mobile{
+        @include components.main-mobile-footer;
+        @include components.mobile-footer;     
+}
+}
