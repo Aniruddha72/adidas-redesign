@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+* button {
+  border: 0;
+}
+
+* a {
+  text-decoration: none;
+}
+
+.main-header {
+  display: flex;
+}
+.main-header .left {
+  width: 60%;
+}
+.main-header .left h1 {
+  text-transform: uppercase;
+  font-size: 36px;
+  padding-block-start: 50px;
+  padding-inline: 60px;
+  padding-block-end: 35px;
+}
+.main-header .right {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  gap: 8px;
+}
+.main-header .right .line {
+  height: 3px;
+  width: 64px;
+  background-color: #000;
+}
+.main-header .right a {
+  color: #000;
+  text-decoration: none;
+}
+.main-header .right a .bag {
+  text-decoration: underline;
+}
+.main-header .right a p {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.main-header .right a .bag {
+  text-decoration: none;
+}
+.main-header .right a .address {
+  text-decoration: underline;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  gap: 41px;
+  padding-inline: 60px;
+}
+.main-content .left {
+  width: 60%;
+}
+.main-content .left .address-card {
+  padding: 20px;
+  border: 3px solid #000;
+  margin-block-end: 40px;
+}
+.main-content .left .address-card .name {
+  font-size: 28px;
+  font-weight: 500;
+  padding-block-end: 26px;
+}
+.main-content .left .address-card .address, .main-content .left .address-card .number {
+  font-size: 22px;
+  width: 50%;
+  padding-block-end: 18px;
+}
+.main-content .left .address-card .icon-group {
+  padding-block-start: 63px;
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+}
+.main-content .left .delivery-label {
+  text-transform: uppercase;
+  font-size: 36px;
+  padding-block-end: 35px;
+}
+
+.main-content .left .delivery-option {
+  border: 3px solid #000;
+  margin-block-end: 40px;
+  padding: 10px;
+}
+.main-content .left .delivery-option .row-1 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-block-end: 26px;
+}
+.main-content .left .delivery-option .row-1 .option-name {
+  font-size: 28px;
+  font-weight: 500;
+}
+.main-content .left .delivery-option .row-1 .cost {
+  font-size: 22px;
+}
+.main-content .left .delivery-option .row-2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.main-content .left .delivery-option .row-2 .delivery-details {
+  font-size: 22px;
+}
+.main-content .left .delivery-option .row-2 .delivery-radio {
+  width: 20px;
+}
+.main-content .left .pay {
+  padding-block: 15px;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 60px;
+  margin-block-end: 60px;
+}
+.main-content .left .pay .pay-link .pay-button {
+  display: flex;
+  background-color: transparent;
+  color: #fff;
+  font-size: 22px;
+  text-transform: uppercase;
+  gap: 15px;
+}
+
+.main-content .right {
+  width: 40%;
+}
+.main-content .right .summary {
+  text-transform: uppercase;
+  font-size: 28px;
+}
+.main-content .right .order-summary-card {
+  margin-block-start: 20px;
+  padding: 35px;
+  border: 3px solid #000;
+  font-size: 22px;
+}
+.main-content .right .order-summary-card .row {
+  display: flex;
+  justify-content: space-between;
+  padding-block-end: 15px;
+}
+.main-content .right .order-summary-card .row-3 {
+  padding-block-start: 60px;
+}
+.main-content .right .order-summary-card .row-3 .total p:first-child {
+  font-weight: 600;
+}
+.main-content .right .order-summary-card .row-3 > p {
+  font-weight: 600;
+}
+.main-content .right .order-card-label h1 {
+  text-transform: uppercase;
+  font-size: 28px;
+  padding-block-start: 37px;
+}
+.main-content .right .order-card {
+  display: flex;
+  margin-block-start: 20px;
+  border: 3px solid #000;
+}
+.main-content .right .order-card ._left img {
+  aspect-ratio: 1;
+  width: 183px;
+}
+.main-content .right .order-card ._right {
+  padding: 20px;
+}
+.main-content .right .order-card ._right .row-1 {
+  padding-block-end: 6px;
+}
+.main-content .right .order-card ._right .row-1 .product-name {
+  font-size: 22px;
+}
+.main-content .right .order-card ._right .row-3 {
+  display: flex;
+  justify-content: space-between;
+  padding-block-start: 38px;
+  align-items: center;
+}
+.main-content .right .order-card ._right .row-3 .product-price {
+  background-color: #000;
+  color: #fff;
+  padding-block: 5px;
+  padding-inline: 10px;
+  font-size: 22px;
+}
+
+.main-footer {
+  padding-inline: 120px;
+  padding-block-start: 55px;
+  background-color: #000;
+}
+.main-footer .big-footer {
+  display: flex;
+  gap: 112px;
+  justify-content: center;
+  align-items: start;
+}
+.main-footer .big-footer > div ul {
+  list-style: none;
+}
+.main-footer .big-footer > div ul li:first-child {
+  font-size: 32px;
+  color: #fff;
+  font-weight: 600;
+}
+.main-footer .big-footer > div ul li {
+  padding-block-end: 15px;
+}
+.main-footer .big-footer > div ul li a {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 400;
+}
+.main-footer .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 17px;
+  margin-block-start: 42px;
+}
+.main-footer .social-links h3 {
+  color: #fff;
+  width: max-content;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.main-footer .social-links .media-links {
+  display: flex;
+  gap: 20px;
+}
+.main-footer .trademark {
+  margin-block-start: 60px;
+  padding-block-end: 25px;
+}
+.main-footer .trademark h6 {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+@media screen and (max-width: 393px) {
+  .main-header {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-inline: 15px;
+    padding-block-start: 30px;
+  }
+  .main-header .left {
+    width: 100%;
+  }
+  .main-header .left h1 {
+    font-size: 18px;
+    padding-inline-start: 15px;
+    padding-inline-end: 15px;
+    padding-block-start: 40px;
+  }
+  .main-header .right a p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  .main-content {
+    padding-inline: 15px;
+    display: block;
+  }
+  .main-content .left, .main-content .right {
+    width: 100%;
+    padding-inline: 15px;
+  }
+  .main-content .left .address-card {
+    padding: 20px;
+    border: 3px solid #000;
+    margin-block-end: 30px;
+  }
+  .main-content .left .address-card .name {
+    font-size: 18px;
+    font-weight: 500;
+    padding-block-end: 26px;
+  }
+  .main-content .left .address-card .address, .main-content .left .address-card .number {
+    font-size: 16px;
+    width: 100%;
+    padding-block-end: 10px;
+  }
+  .main-content .left .address-card .icon-group {
+    padding-block-start: 18px;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+  }
+  .main-content .left .address-card .icon-group a img {
+    width: 24px;
+  }
+  .main-content .left .delivery-label {
+    font-size: 18px;
+    padding-block: 0;
+    padding-block-end: 15px;
+  }
+  .main-content .left .delivery-option {
+    border: 3px solid #000;
+    margin-block-end: 15px;
+    padding: 10px;
+  }
+  .main-content .left .delivery-option .row-1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    padding-block-end: 19px;
+  }
+  .main-content .left .delivery-option .row-1 .option-name {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .main-content .left .delivery-option .row-1 .cost {
+    font-size: 18px;
+  }
+  .main-content .left .delivery-option .row-2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  .main-content .left .delivery-option .row-2 .delivery-details {
+    font-size: 16px;
+  }
+  .main-content .left .delivery-option .row-2 .delivery-radio {
+    width: 20px;
+  }
+  .main-content .left .pay {
+    display: none;
+  }
+  .main-content .right .summary {
+    font-size: 18px;
+    padding-block-start: 30px;
+    padding-block-end: 0;
+  }
+  .main-content .right .order-summary-card {
+    padding-inline: 28px;
+    padding-block: 26px;
+  }
+  .main-content .right .order-summary-card .row p {
+    font-size: 16px;
+  }
+  .main-content .right .order-summary-card .row-3 {
+    padding-block-start: 38px;
+  }
+  .main-content .right .order-card-label h1 {
+    font-size: 18px;
+    padding-block-end: 15px;
+  }
+  .main-content .right .order-card {
+    display: flex;
+    margin-block-start: 0px;
+    border: 3px solid #000;
+    margin-block-end: 30px;
+  }
+  .main-content .right .order-card ._left img {
+    width: 153px;
+    height: 163px;
+  }
+  .main-content .right .order-card ._right {
+    padding: 0;
+    padding-block-start: 15px;
+    padding-inline: 15px;
+  }
+  .main-content .right .order-card ._right .row-1 {
+    padding-block-end: 6px;
+  }
+  .main-content .right .order-card ._right .row-1 .product-name {
+    font-size: 14px;
+  }
+  .main-content .right .order-card ._right .row-3 {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 38px;
+    align-items: center;
+  }
+  .main-content .right .order-card ._right .row-3 .product-price {
+    background-color: #000;
+    color: #fff;
+    padding-block: 5px;
+    padding-inline: 10px;
+    font-size: 14px;
+  }
+  .main-content .right .pay {
+    padding-block: 10px;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 30px;
+    margin-block-end: 30px;
+  }
+  .main-content .right .pay .pay-link .pay-button {
+    display: flex;
+    background-color: transparent;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    gap: 15px;
+  }
+  .main-content .right .pay .pay-link .pay-button img {
+    width: 9px;
+  }
+}
+
+@media screen and (max-width: 393px) {
+  .main-footer {
+    padding-inline: 0px;
+  }
+  .main-footer .big-footer {
+    display: none;
+  }
+  .main-footer .social-links h3 {
+    font-size: 20px;
+  }
+  .main-footer .social-links .media-links img {
+    width: 23px;
+  }
+  .main-footer .trademark h6 {
+    font-size: 10px;
+    width: 100%;
+    text-align: start;
+    padding-inline-start: 15px;
+  }
+  .main-footer .mobile-footer {
+    display: block;
+    color: #fff;
+    width: 100%;
+  }
+  .main-footer .mobile-footer-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 64px;
+  }
+  .main-footer .mobile-footer-wrapper ul {
+    list-style: none;
+  }
+  .main-footer .mobile-footer-wrapper ul li {
+    font-size: 16px;
+    text-align: center;
+    padding-block-end: 15px;
+  }
+  .main-footer .mobile-footer-wrapper ul li:first-child {
+    padding-block-end: 46px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+/*# sourceMappingURL=address-page.css.map */
